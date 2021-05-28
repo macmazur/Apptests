@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="www.fokus.techbytes">
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="www.fokus.techbytes.app.AppTests"
+        android:allowBackup="true"
+        android:icon="@drawable/nytimes"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/nytimes"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Topten.NoActionBar">
+        <activity
+            android:name="www.fokus.techbytes.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/Theme.Topten.NoActionBar"/>
+        <activity android:name="www.fokus.techbytes.ui.base.BaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

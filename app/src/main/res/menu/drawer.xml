@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2020, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- Your menu ids must match your nav graph ids -->
+<!-- checkableBehavior must be single for top level destinations -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:id="@+id/drawer_menu_top"
+        android:checkableBehavior="single">
+        <!-- Set the starting destination to checked -->
+        <item
+            android:id="@+id/articlesFragment"
+            android:contentDescription="Home"
+            android:icon="@drawable/ic_share"
+            android:title="Home" />
+        <item
+            android:id="@+id/bookmarksFragment"
+            android:contentDescription="Bookmarks"
+            android:icon="@drawable/ic_day"
+            android:title="Bookmarks" />
+    </group>
+
+    <!--<group
+        android:id="@+id/drawer_menu_bottom"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/settings"
+            android:contentDescription="Bookmarks"
+            android:icon="@drawable/ic_night"
+            android:title="Bookmarks" />
+    </group>-->
+</menu>
