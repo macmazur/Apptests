@@ -195,9 +195,10 @@ class ArticlesFragment : BaseFragment<FragmentArticlesBinding, ArticleViewModel>
             }
 
             R.id.action_night_mode -> {
-                /*item.isChecked = !item.isChecked
-                setUIMode(item, item.isChecked)*/
-                findNavController().navigate(R.id.action_articlesFragment_to_drawerActivity)
+                item.isChecked = !item.isChecked
+                setUIMode(item, item.isChecked)
+                /* mmazur
+                findNavController().navigate(R.id.action_articlesFragment_to_drawerActivity)*/
                 true
             }
             R.id.action_about -> {

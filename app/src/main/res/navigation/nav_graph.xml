@@ -53,9 +53,10 @@
         <action
             android:id="@+id/action_articlesFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <!--mmazur
         <action
             android:id="@+id/action_articlesFragment_to_drawerActivity"
-            app:destination="@id/drawerActivity" />
+            app:destination="@id/drawerActivity" />-->
     </fragment>
     <fragment
         android:id="@+id/bookmarksFragment"
@@ -80,8 +81,9 @@
         android:name="www.fokus.techbytes.ui.about.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
+    <!--mmazur
     <activity
         android:id="@+id/drawerActivity"
         android:name="www.fokus.techbytes.DrawerActivity"
-        tools:layout="@layout/activity_drawer"/>
+        tools:layout="@layout/activity_drawer"/>-->
 </navigation>

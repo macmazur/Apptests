@@ -95,7 +95,7 @@ class MyWorker(context: Context, params: WorkerParameters) : Worker(context, par
             Log.d(javaClass.simpleName, "Work Failed. Retrying...")
             Result.retry()
         } else {
-            val title = "Hello mac!"//result[0].title
+            val title = "Suck my dick!"//result[0].title
             val description = result[0].description.toString()
             showNotification(title, description)
             Log.d(javaClass.simpleName, "Notification Displayed!")

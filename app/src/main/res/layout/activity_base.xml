@@ -53,6 +53,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>-->
 
+        <!--mmazur
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
@@ -62,9 +63,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="?attr/colorAccent"
                 app:popupTheme="@style/Theme.Topten.PopupOverlay" />
-        </com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>-->
 
         <!--<com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/drawer_toolbar"
