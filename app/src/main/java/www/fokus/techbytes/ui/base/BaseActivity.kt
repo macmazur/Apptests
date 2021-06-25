@@ -26,12 +26,16 @@
 
 package www.fokus.techbytes.ui.base
 
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.Window
+import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -53,7 +57,7 @@ import java.util.concurrent.TimeUnit
 
 
 @AndroidEntryPoint
-class BaseActivity : AppCompatActivity() {
+class BaseActivity : AppCompatActivity(), FragmentListener {
 
     // todo test scope and reference
     private val viewModel: ArticleViewModel by viewModels()
@@ -80,10 +84,19 @@ class BaseActivity : AppCompatActivity() {
         //setSupportActionBar(binding.toolbar)
         setSupportActionBar(binding.appBottomBar.bottomAppBar)
 
-        binding.appBottomBar.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.appBottomBar.fab.apply {
+            setOnClickListener {
+                //navigateToCompose()
+                findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_searchFragment)
+                //this.hide()
+            }
         }
+
+        /*binding.appBottomBar.fab.setOnClickListener { view ->
+            *//*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()*//*
+
+        }*/
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.drawerNavView
         val navHostFragment =
@@ -93,7 +106,7 @@ class BaseActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.articlesFragment, R.id.bookmarksFragment
+                R.id.mapsFragment, R.id.articlesFragment, R.id.bookmarksFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -110,6 +123,20 @@ class BaseActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         NavigationUI.setupActionBarWithNavController(this, navController)*/
 
+        val w: Window = window
+        w.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+
+    }
+
+    override fun hideBottomBarFab() {
+        binding.appBottomBar.fab.hide()
+    }
+
+    override fun showBottomBarFab() {
+        binding.appBottomBar.fab.show()
     }
 
     // todo integrate with Hilt

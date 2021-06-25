@@ -24,15 +24,20 @@
         android:checkableBehavior="single">
         <!-- Set the starting destination to checked -->
         <item
-            android:id="@+id/articlesFragment"
-            android:contentDescription="Home"
+            android:id="@+id/mapsFragment"
+            android:contentDescription="@string/menu_map"
             android:icon="@drawable/ic_share"
-            android:title="Home" />
+            android:title="@string/menu_map" />
+        <item
+            android:id="@+id/articlesFragment"
+            android:contentDescription="@string/menu_articles"
+            android:icon="@drawable/ic_share"
+            android:title="@string/menu_articles" />
         <item
             android:id="@+id/bookmarksFragment"
-            android:contentDescription="Bookmarks"
+            android:contentDescription="@string/menu_bookmarks"
             android:icon="@drawable/ic_day"
-            android:title="Bookmarks" />
+            android:title="@string/menu_bookmarks" />
     </group>
 
     <!--<group
