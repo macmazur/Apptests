@@ -2,6 +2,8 @@ package www.fokus.techbytes.ui.search
 
 import android.app.Activity.RESULT_CANCELED
 import android.app.Activity.RESULT_OK
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
@@ -30,6 +32,7 @@ import www.fokus.techbytes.R
 import www.fokus.techbytes.databinding.FragmentSearchBinding
 import www.fokus.techbytes.ui.about.AboutViewModel
 import www.fokus.techbytes.ui.base.BaseFragment
+import java.util.*
 
 
 /**
@@ -48,6 +51,14 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, AboutViewModel>() {
 
         hideBottomBarFab()
 
+        binding.tapSearchFrom.setOnClickListener {
+            getAutoComplete(null)
+        }
+
+        binding.tapPickupTime.setOnClickListener {
+            pickDateTime()
+        }
+
         /**
          * Initialize Places. For simplicity, the API key is hard-coded. In a production
          * environment we recommend using a secure mechanism to manage API keys.
@@ -56,6 +67,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, AboutViewModel>() {
             Places.initialize(applicationContext(), getString(R.string.google_maps_key))
         }
 
+        /*
         // Places by Intent
         binding.fab.setOnClickListener {
             // Set the fields to specify which types of place data to
@@ -137,7 +149,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, AboutViewModel>() {
         binding.btnSpeak.setOnClickListener {
             getSpeechInput()
         }
-
+        */
 
         super.onViewCreated(view, savedInstanceState)
     }
@@ -146,6 +158,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, AboutViewModel>() {
      * Override the activity's onActivityResult(), check the request code, and
      * do something with the returned place data (in this example its place name and place ID).
      */
+    /*
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -175,7 +188,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, AboutViewModel>() {
             }
         }
     }
-
+    */
     /*private fun getAutoComplete(query: String?) {
         // Start the autocomplete intent.
         val intent = context?.let { it1 ->
@@ -205,6 +218,24 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, AboutViewModel>() {
             toast("Your Device Doesn't Support Speech Input")
         }
     }*/
+
+    private fun pickDateTime() {
+        val currentDateTime = Calendar.getInstance()
+        val startYear = currentDateTime.get(Calendar.YEAR)
+        val startMonth = currentDateTime.get(Calendar.MONTH)
+        val startDay = currentDateTime.get(Calendar.DAY_OF_MONTH)
+        val startHour = currentDateTime.get(Calendar.HOUR_OF_DAY)
+        val startMinute = currentDateTime.get(Calendar.MINUTE)
+
+        DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { _, year, month, day ->
+            TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                val pickedDateTime = Calendar.getInstance()
+                pickedDateTime.set(year, month, day, hour, minute)
+                //doSomethingWith(pickedDateTime)
+                toast(pickedDateTime.toString())
+            }, startHour, startMinute, true).show() //:ustawienia telefonu - DateFormat.is24HourFormat(requireContext())
+        }, startYear, startMonth, startDay).show()
+    }
 
 
     override fun getViewBinding(

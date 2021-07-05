@@ -26,8 +26,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     protected abstract val viewModel: VM
 
-    private val AUTOCOMPLETE_REQUEST_CODE = 1
-    private val SPEACH_REQUEST_CODE = 10
+    private val AUTOCOMPLETE_REQUEST_CODE = 10
+    private val SPEACH_REQUEST_CODE = 11
 
     override fun onCreateView(
         inflater: LayoutInflater,

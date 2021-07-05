@@ -64,5 +64,8 @@
     <string name="menu_articles">Artykuły</string>
     <string name="menu_bookmarks">Oznaczone</string>
     <string name="text_map_search">Szukaj</string>
+    <string name="text_map_search_from">Wybierz punkt początkowy</string>
+    <string name="text_map_search_to">Wybierz punkt docelowy</string>
+    <string name="text_map_time_derived">Czas wyjazdu</string>
 
 </resources>

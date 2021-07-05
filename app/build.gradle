@@ -94,6 +94,8 @@ dependencies {
     // Maps
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
     implementation 'com.google.android.libraries.places:places:2.4.0'
+    implementation 'org.jetbrains.anko:anko-sdk15:0.8.2'
+    implementation 'com.beust:klaxon:0.30'
 
     // Architectural Components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"

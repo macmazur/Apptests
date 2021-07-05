@@ -18,6 +18,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchFragment">
 
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,18 +36,209 @@
         android:orientation="vertical"
         android:transitionGroup="true">
 
-        <fragment android:id="@+id/autocomplete_fragment"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />
+            android:background="@drawable/transparent_background"
+            android:layout_marginTop="26dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+            <androidx.cardview.widget.CardView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp">
+
+                <!--<fragment android:id="@+id/autocomplete_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/actionBarItemBackground"
+                        android:padding="16dp"
+                        app:srcCompat="@drawable/ic_location" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:background="@drawable/border">
+
+                    <TextView
+                        android:id="@+id/tap_search_from"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:background="@null"
+                        android:padding="7dp"
+                        android:textSize="16sp"
+                        android:hint="@string/text_map_search_from"
+                        android:text="Kolska 9, Warszawa"/>
+
+                    <ImageButton
+                        android:id="@+id/tap_speak_from"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/actionBarItemBackground"
+                        android:padding="16dp"
+                        app:srcCompat="@drawable/ic_mic" />
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="12dp"
-            android:src="@android:drawable/ic_menu_search"/>
+            android:background="?attr/actionBarItemBackground"
+            android:layout_marginStart="24dp"
+            app:srcCompat="@drawable/ic_more" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_background"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp">
+
+                <!--<fragment android:id="@+id/autocomplete_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/actionBarItemBackground"
+                        android:padding="16dp"
+                        app:srcCompat="@drawable/ic_location" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/border">
+
+                        <TextView
+                            android:id="@+id/tap_search_to"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:background="@null"
+                            android:padding="7dp"
+                            android:textSize="16sp"
+                            android:hint="@string/text_map_search_to"
+                            android:text="Chałupy 3"/>
+
+                        <ImageButton
+                            android:id="@+id/tap_speak_to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/actionBarItemBackground"
+                            android:padding="16dp"
+                            app:srcCompat="@drawable/ic_mic" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_background"
+            android:layout_marginBottom="26dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp">
+
+                <!--<fragment android:id="@+id/autocomplete_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/actionBarItemBackground"
+                        android:padding="16dp"
+                        app:srcCompat="@drawable/ic_clock" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/border">
+
+                        <TextView
+                            android:id="@+id/tap_pickup_time"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:background="@null"
+                            android:padding="7dp"
+                            android:textSize="16sp"
+                            android:hint="@string/text_map_time_derived"
+                            android:text="Cze 25 10:00"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <!--<fragment android:id="@+id/autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />-->
+
 
         <!--<androidx.appcompat.widget.Toolbar
             android:id="@+id/search_toolbar"
@@ -72,7 +274,7 @@
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>-->
 
-        <View
+        <!--<View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/white"
@@ -97,12 +299,12 @@
                 android:imeOptions="flagNoExtractUi|actionSearch"
                 android:inputType="textNoSuggestions" />
 
-            <!--<ImageButton
+            &lt;!&ndash;<ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/actionBarItemBackground"
                 android:padding="16dp"
-                app:srcCompat="@drawable/ic_mic" />-->
+                app:srcCompat="@drawable/ic_mic" />&ndash;&gt;
         </LinearLayout>
 
         <View
@@ -159,7 +361,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
-        </ScrollView>
+        </ScrollView>-->
     </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
